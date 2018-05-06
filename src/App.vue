@@ -7,8 +7,6 @@
 </template>
 
 <script>
-  import Component from 'vue-class-component'
-
 
   export default {
   name: 'App'
