@@ -22,6 +22,10 @@ Backlogのwikiに定型の構造をした文章を作成するツール
     npm run dev
     ```
 
+## テンプレートの修正
+
+srd/data/wiki.js の内容を変更する。
+nameがページ名で、contentがwikiの内容になります。
 
 ## コマンド一覧
 
