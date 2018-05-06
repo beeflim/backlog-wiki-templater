@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="main-logo">
+      <img src="./assets/backlog.png">
+    </div>
     <router-view/>
   </div>
 
@@ -9,17 +11,25 @@
 <script>
 
   export default {
-  name: 'App'
-}
+    name: 'App'
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+<style scoped lang="scss">
+  @import "styles/init.css";
+  @import "styles/material-icons.min.css";
+
+  .main-logo{
+    text-align:center;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+    margin-top: 60px;
+
+  }
+
 </style>
