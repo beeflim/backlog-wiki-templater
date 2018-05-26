@@ -234,26 +234,25 @@
        */
       postWikiTemplate: function () {
 
-        console.log(this.wikiList)
+        //すべての入力が行われていることを確認する。
+        if (this.spaceId == "" || this.userApiKey == '' || this.targetProject.value == '' || this.mileStoneName == '') {
+          return;
+        }
 
-        // //すべての入力が行われていることを確認する。
-        // if (this.spaceId == "" || this.userApiKey == '' || this.targetProject.value == '' || this.mileStoneName == '') {
-        //   return;
-        // }
-        //
-        // axios.all(createMultiAxios(this.wikiList, this.spaceId, this.userApiKey, this.targetProject.value, this.mileStoneName))
-        //   .then(([api1Result]) => {
-        //
-        //     console.log(api1Result)
-        //     this.openModal('successModal', 'Wikiの作成が終わりました');
-        //
-        //   })
-        //   .catch(error => {
-        //
-        //     //エラー表示
-        //     console.log(error);
-        //     this.openModal('errorModal', 'Wikiの作成に失敗しました');
-        //   });
+        axios.all(createMultiAxios(this.wikiList, this.spaceId, this.userApiKey, this.targetProject.value, this.mileStoneName))
+          .then(([api1Result]) => {
+
+            console.log(api1Result)
+            this.openModal('successModal', 'Wikiの作成が終わりました');
+
+          })
+          .catch(error => {
+
+            //エラー表示
+            console.log(error);
+            this.openModal('errorModal', 'Wikiの作成に失敗しました');
+          });
+
       }
     }
   }

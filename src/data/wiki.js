@@ -28,89 +28,91 @@ export default {
     let targetArray = [
       {
         name: '',
-        content: '* ' + mileStoneName + '\n' +
-        '\n' +
-        '** 振り返り\n' +
-        '\n' +
-        '- [[' + mileStoneName + '/社内振り返り]]\n' +
-        '\n' +
-        '\n' +
-        '** 概要\n' +
-        '\n' +
-        '> ここにマイルストーンの概要を記入します。\n' +
-        '\n' +
-        '> 商流がわかっていればここに記載します。。\n' +
-        '\n' +
-        '> 使用する言語やツールの概要を記入します。\n' +
-        '\n' +
-        '*** スケジュール\n' +
-        '\n' +
-        '> 全体スケジュールを記入します。\n' +
-        '\n' +
-        '| 日にち | 内容 |h\n' +
-        '| 2018/0x/xx | キックオフ |\n' +
-        '| 2018/0x/xx | 作業開始 |\n' +
-        '| 2018/0x/xx | 全ソース作成完了 |\n' +
-        '| 2018/0x/xx | 納品 |\n' +
-        '| 2018/0x/xx | 振返りミーティング |\n' +
-        '\n' +
-        '*** メンバー\n' +
-        '\n' +
-        '**** 社内\n' +
-        '\n' +
-        '| 日にち | 名前 |h\n' +
-        '| 0x/xx ～ 0x/yy | XXX, YYY(BP) |\n' +
-        '| 0a/bb ～ 0a/bb | XXX, YYY(BP), ZZZ(BP) |\n' +
-        '\n' +
-        '**** 取引先\n' +
-        '\n' +
-        '| 日にち | 名前 |h\n' +
-        '| 0x/xx ～ 0a/bb | XXX(PM), YYY(PL), ZZZ(PG) |\n' +
-        '\n' +
-        '\n' +
-        '** 環境構築\n' +
-        '\n' +
-        '*** 使用するツール・サービス\n' +
-        '\n' +
-        '> ツールへのリンクを記入します\n' +
-        '\n' +
-        '| Name  |h\n' +
-        '| [[google>http://google.co.jp]] |\n' +
-        '\n' +
-        '\n' +
-        '*** 環境構築\n' +
-        '\n' +
-        '- [[' + mileStoneName + '/開発環境/フロントエンド]]\n' +
-        '- [[' + mileStoneName + '/開発環境/バックエンド]]\n' +
-        '- [[' + mileStoneName + '/開発環境/DBへの接続]]\n' +
-        '- [[' + mileStoneName + '/開発環境/テストデータ]]\n' +
-        '\n' +
-        '** 開発・運用ルール\n' +
-        '\n' +
-        '*** 開発\n' +
-        '\n' +
-        '> 開発をする上でのルールを記入します。\n' +
-        '\n' +
-        '- [[' + mileStoneName + '/開発・運用手順/Git]]\n' +
-        '- [[' + mileStoneName + '/開発・運用手順/コーディング規約]]\n' +
-        '- [[' + mileStoneName + '/チェックリスト]]\n' +
-        '- [[' + mileStoneName + '/ナレッジ]]\n' +
-        '\n' +
-        '*** リリース手順\n' +
-        '\n' +
-        '- [[' + mileStoneName + '/リリース手順]]\n' +
-        '\n' +
-        '*** ミーティング\n' +
-        '\n' +
-        '- [[' + mileStoneName + '/議事録]]\n' +
-        '\n' +
-        '> 取引先との定例MTGの日にちなどを記入します。\n' +
-        '\n' +
-        '\n' +
-        '\n' +
-        '*** 社内ルール\n' +
-        '\n' +
-        '> 朝会、帰りの報告、など決まり事を記入します。\n'
+        content: `
+* {mileStoneName}
+
+** 振り返り
+
+- [[{mileStoneName}/社内振り返り]]
+
+
+** 概要
+
+> ここにマイルストーンの概要を記入します。
+
+> 商流がわかっていればここに記載します。。
+
+> 使用する言語やツールの概要を記入します。
+
+*** スケジュール
+
+> 全体スケジュールを記入します。
+
+| 日にち | 内容 |h
+| 2018/0x/xx | キックオフ |
+| 2018/0x/xx | 作業開始 |
+| 2018/0x/xx | 全ソース作成完了 |
+| 2018/0x/xx | 納品 |
+| 2018/0x/xx | 振返りミーティング |
+
+*** メンバー
+
+**** 社内
+
+| 日にち | 名前 |h
+| 0x/xx ～ 0x/yy | XXX, YYY(BP) |
+| 0a/bb ～ 0a/bb | XXX, YYY(BP), ZZZ(BP) |
+
+**** 取引先
+
+| 日にち | 名前 |h
+| 0x/xx ～ 0a/bb | XXX(PM), YYY(PL), ZZZ(PG) |
+
+
+** 環境構築
+
+*** 使用するツール・サービス
+
+> ツールへのリンクを記入します
+
+| Name  |h
+| [[google>http://google.co.jp]] |
+
+
+*** 環境構築
+
+- [[{mileStoneName}/開発環境/フロントエンド]]
+- [[{mileStoneName}/開発環境/バックエンド]]
+- [[{mileStoneName}/開発環境/DBへの接続]]
+- [[{mileStoneName}/開発環境/テストデータ]]
+
+** 開発・運用ルール
+
+*** 開発
+
+> 開発をする上でのルールを記入します。
+
+- [[{mileStoneName}/開発・運用手順/Git]]
+- [[{mileStoneName}/開発・運用手順/コーディング規約]]
+- [[{mileStoneName}/チェックリスト]]
+- [[{mileStoneName}/ナレッジ]]
+
+*** リリース手順
+
+- [[{mileStoneName}/リリース手順]]
+
+*** ミーティング
+
+- [[{mileStoneName}/議事録]]
+
+> 取引先との定例MTGの日にちなどを記入します。
+
+
+
+*** 社内ルール
+
+> 朝会、帰りの報告、など決まり事を記入します。
+`
       },
       {
         name: '/社内振り返り',
@@ -335,10 +337,14 @@ export default {
 
     targetArray.forEach((value) => {
 
-      let content = value.content;
+      var content = value.content;
 
       replaceArray.forEach((replace) => {
-        content.replace('{' + replace.name + '}', replace.value)
+
+        let regexStr = new RegExp('{' + replace.name + '}', 'g')
+
+        content = content.replace(regexStr, replace.value)
+
       })
 
       replacedContentsArray.push(content)
