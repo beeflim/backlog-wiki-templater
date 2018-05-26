@@ -9,8 +9,23 @@ export default {
   topページだけ、マイルストーン名が必要なので、書き方がプレーンテキストじゃなくなっています。
 
    */
-  getData: function(mileStoneName) {
-    return [
+  getData: function (mileStoneName) {
+
+    let funcName = this.getParams(this.getData)
+
+    let replaceArray = []
+
+    for (var i = 0; i < arguments.length; i++) {
+      replaceArray.push(
+        {
+          'name': funcName[i],
+          'value': arguments[i]
+        }
+      )
+    }
+
+
+    let targetArray = [
       {
         name: '',
         content: '* ' + mileStoneName + '\n' +
@@ -236,9 +251,9 @@ export default {
       {
         name: '/議事録',
         content: '* 議事録\n' +
-                 '> 議事録に対して、コメントがあればここに追加していきましょう。\n'+
-                 '|タイトル|h\n' +
-                 '|[[' + mileStoneName + '/議事録/2018_xx_xx_キックオフミーティング]]|\n'
+        '> 議事録に対して、コメントがあればここに追加していきましょう。\n' +
+        '|タイトル|h\n' +
+        '|[[' + mileStoneName + '/議事録/2018_xx_xx_キックオフミーティング]]|\n'
 
       },
       {
@@ -286,5 +301,50 @@ export default {
 
       },
     ];
+
+    return this.replaceString(targetArray, replaceArray);
+  },
+
+  /**
+   * 引数の名称を配列で返す
+   *
+   * @param func ファンクション
+   * @return {array} 引数の名称
+   */
+  getParams: function (func) {
+
+    var source = func.toString().replace(/\/\/.*$|\/\*[\s\S]*?\*\/|\s/gm, '');
+
+    var params = source.match(/\((.*?)\)/)[1].split(',');
+
+    if (params.length === 1 && params[0] === '') {
+      return [];
+    }
+
+    return params;
+  },
+
+  /**
+   *
+   * @param targetArray 置換対象のページ
+   * @param replaceArray 置換する
+   */
+  replaceString: function (targetArray, replaceArray) {
+
+    let replacedContentsArray = [];
+
+    targetArray.forEach((value) => {
+
+      let content = value.content;
+
+      replaceArray.forEach((replace) => {
+        content.replace('{' + replace.name + '}', replace.value)
+      })
+
+      replacedContentsArray.push(content)
+
+    })
+
+    return replacedContentsArray;
   }
 }

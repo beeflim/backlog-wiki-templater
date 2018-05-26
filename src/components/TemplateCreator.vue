@@ -234,24 +234,26 @@
        */
       postWikiTemplate: function () {
 
-        //すべての入力が行われていることを確認する。
-        if (this.spaceId == "" || this.userApiKey == '' || this.targetProject.value == '' || this.mileStoneName == '') {
-          return;
-        }
+        console.log(this.wikiList)
 
-        axios.all(createMultiAxios(this.wikiList, this.spaceId, this.userApiKey, this.targetProject.value, this.mileStoneName))
-          .then(([api1Result]) => {
-
-            console.log(api1Result)
-            this.openModal('successModal', 'Wikiの作成が終わりました');
-
-          })
-          .catch(error => {
-
-            //エラー表示
-            console.log(error);
-            this.openModal('errorModal', 'Wikiの作成に失敗しました');
-          });
+        // //すべての入力が行われていることを確認する。
+        // if (this.spaceId == "" || this.userApiKey == '' || this.targetProject.value == '' || this.mileStoneName == '') {
+        //   return;
+        // }
+        //
+        // axios.all(createMultiAxios(this.wikiList, this.spaceId, this.userApiKey, this.targetProject.value, this.mileStoneName))
+        //   .then(([api1Result]) => {
+        //
+        //     console.log(api1Result)
+        //     this.openModal('successModal', 'Wikiの作成が終わりました');
+        //
+        //   })
+        //   .catch(error => {
+        //
+        //     //エラー表示
+        //     console.log(error);
+        //     this.openModal('errorModal', 'Wikiの作成に失敗しました');
+        //   });
       }
     }
   }
@@ -379,7 +381,8 @@
   .material-icons__10 {
     font-size: 10px;
   }
-  .alert-area{
+
+  .alert-area {
     margin-top: 30px;
   }
 </style>
